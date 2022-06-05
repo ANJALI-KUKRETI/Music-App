@@ -10,16 +10,11 @@ function Hi() {
   const [loginpsswd, setLoginpsswd] = useState("");
   const [forgotpsswd, setForgotpsswd] = useState("");
 
-  // const [signin,setSignin]=useState(true);
-
   function displaySignUp() {
     setSignup(true);
-    // console.log("hh");
   }
   function displayLogin() {
     setSignup(false);
-
-    // console.log("hh");
   }
 
   function signupfunc(e) {
@@ -28,10 +23,6 @@ function Hi() {
     console.log(email);
     console.log(psswd);
   }
-  // if(!signup)
-
-  // console.log(signup);
-  // console.log(signin);
 
   function signinfunc(e) {
     e.preventDefault();
@@ -45,124 +36,111 @@ function Hi() {
   }
   return (
     <div className={`container ${!signup ? "" : "sign-up-mode"}`}>
+     {/* <div className={`layer ${!signup ? "" : "sign-up-mode"}`>hh</div> */}
+    <div className={`layer ${!signup ? "" : "sign-up-mode"}`}>
+     
       <div className="signin-signup">
-          <form onSubmit={signinfunc} className="sign-in-form">
-            <h2 className="title">Login</h2>
+        <form onSubmit={signinfunc} className="sign-in-form">
+          <h2 className="title">Login</h2>
+          <div className="input-field">
+            <i className="fa-solid fa-user" />
+            <input
+              type="text"
+              name="fname"
+              placeholder="username"
+              value={loginusername}
+              onChange={(e) => setLoginusername(e.target.value)}
+              required
+            />
+            <div className="formerror" />
+          </div>
+          <div className="input-field" id="userpassword">
+            <i className="fa-solid fa-lock" />
+            <input
+              type="password"
+              name="fpassword"
+              placeholder="password"
+              value={loginpsswd}
+              onChange={(e) => setLoginpsswd(e.target.value)}
+              required
+            />
+            <div className="formerror" />
+          </div>
+          <button type="submit" value="Login">
+            Login
+          </button>
+        </form>
+
+        <form className="forgotpassword" onSubmit={forgotPassword}>
+          <h2 className="title">Forgot password?</h2>
+          <div className="forgotPassword">
             <div className="input-field">
               <i className="fa-solid fa-user" />
               <input
                 type="text"
-                name="fname"
                 placeholder="username"
-                value={loginusername}
-                onChange={(e) => setLoginusername(e.target.value)}
+                value={forgotpsswd}
+                onChange={(e) => setForgotpsswd(e.target.value)}
                 required
               />
               <div className="formerror" />
             </div>
-            <div className="input-field" id="userpassword">
-              <i className="fa-solid fa-lock" />
-              <input
-                type="password"
-                name="fpassword"
-                placeholder="password"
-                value={loginpsswd}
-                onChange={(e) => setLoginpsswd(e.target.value)}
-                required
-              />
-              <div className="formerror" />
-            </div>
-            <button type="submit" value="Login" >
-              Login
+            <button type="submit" value="submit" id="btn2">
+              Submit
             </button>
-          </form>
-      
-          <form
-            className="forgotpassword"
-            onSubmit={forgotPassword}
-          >
-            <h2 className="title">Forgot password?</h2>
-            <div className="forgotPassword">
-              <div className="input-field">
-                <i className="fa-solid fa-user" />
-                <input
-                  type="text"
-                  placeholder="username"
-                  value={forgotpsswd}
-                  onChange={(e) => setForgotpsswd(e.target.value)}
-                  required
-                />
-                <div className="formerror" />
-              </div>
-              <button type="submit" value="submit" id="btn2">
-                Submit
-              </button>
-            </div>
-          </form>
-          
-        <div className="signup" id="signup">
-          <form
-            /*action="# " */ name="myForm"
-            /*method="post"*/ className="sign-up-form"
-            id="signUpForm"
-            onSubmit={signupfunc}
-          >
-            <h2 className="title">Sign up</h2>
-            <div className="input-fieldU" id="name">
-              <i className="fa-solid fa-user" />
-              <input
-                type="text"
-                name="fname"
-                placeholder="firstname"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-              <div className="formerror" />
-            </div>
-            <div className="input-fieldU" id="email">
-              <i className="fa-solid fa-at" />
-              <input
-                type="email"
-                name="femail"
-                placeholder="email"
-                id="useremail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <div className="formerror" />
-            </div>
-            {/* <div class="input-field" id="whatsapp">
-                  <i class="fa-brands fa-whatsapp-square"></i>
-                  <input type="number" name="fwhatsapp" placeholder="Whatsapp" required>
-                  <div class="formerror"></div>
-              </div> */}
-            <div className="input-fieldU" id="password">
-              <i className="fa-solid fa-lock" />
-              <input
-                type="password"
-                name="fpass"
-                placeholder="password"
-                id="userpassword"
-                value={psswd}
-                onChange={(e) => setpsswd(e.target.value)}
-                required
-              />
-              <br />
-              <div className="formerror" />
-            </div>
-            {/* <input type="submit" value="Signup" onclick="submitFunction()" id="ab" class="btn"> */}
-            <button type="submit" value="Signup" id="btn">
-              Sign up
-            </button>
-            <div id="message" />
-            {/* <a href="https://lara.co.in" id="message">Hurrey! Signup success, Please check you inbox to verify email.</a> */}
-          </form>
-        </div>
+          </div>
+        </form>
+
+        <form className="sign-up-form" onSubmit={signupfunc}>
+          <h2 className="title">Sign up</h2>
+          <div className="input-fieldU" id="name">
+            <i className="fa-solid fa-user" />
+            <input
+              type="text"
+              name="fname"
+              placeholder="firstname"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <div className="formerror" />
+          </div>
+          <div className="input-fieldU" id="email">
+            <i className="fa-solid fa-at" />
+            <input
+              type="email"
+              name="femail"
+              placeholder="email"
+              id="useremail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <div className="formerror" />
+          </div>
+
+          <div className="input-fieldU" id="password">
+            <i className="fa-solid fa-lock" />
+            <input
+              type="password"
+              name="fpass"
+              placeholder="password"
+              id="userpassword"
+              value={psswd}
+              onChange={(e) => setpsswd(e.target.value)}
+              required
+            />
+            <br />
+            <div className="formerror" />
+          </div>
+          <button type="submit" value="Signup" id="btn">
+            Sign up
+          </button>
+          <div id="message" />
+        </form>
       </div>
-      {/* Here Animation panel started */}
+
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
@@ -193,7 +171,9 @@ function Hi() {
           />
         </div>
       </div>
+      lll
     </div>
+  </div>
   );
 }
 
