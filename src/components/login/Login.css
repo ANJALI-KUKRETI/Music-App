@@ -15,7 +15,7 @@
   /* border-image: url(/Images/download.jpeg);
     border-image-repeat: round ; */
 }
-body {
+.main {
   min-height: 100vh;
   background: rgb(191, 200, 227);
   background-color: rgba(0, 0, 0, 0.8);
@@ -23,6 +23,20 @@ body {
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.layer {
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: -50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* z-index: 3; */
+  /* z-index: 7; */
 }
 
 .layer {
