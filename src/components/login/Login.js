@@ -1,5 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { login, signUp } from "../../auth/authApi";
 
 function Login() {
   const [signup, setSignup] = useState(false);
@@ -8,7 +10,9 @@ function Login() {
   const [psswd, setPsswd] = useState("");
   const [loginusername, setLoginusername] = useState("");
   const [loginpsswd, setLoginpsswd] = useState("");
-  const [forgotpsswd, setForgotpsswd] = useState("");
+
+  const { error, status } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   function displaySignUp() {
     setSignup(true);
@@ -19,33 +23,34 @@ function Login() {
 
   function signupfunc(e) {
     e.preventDefault();
-    console.log(username);
-    console.log(email);
-    console.log(psswd);
+    dispatch(
+      signUp({
+        email: email,
+        password: psswd,
+      })
+    );
     setEmail("");
     setUsername("");
     setPsswd("");
+    displayLogin();
   }
 
   function signinfunc(e) {
     e.preventDefault();
-    console.log(loginusername);
-    console.log(loginpsswd);
+    dispatch(
+      login({
+        email: loginusername,
+        password: loginpsswd,
+      })
+    );
     setLoginusername("");
     setLoginpsswd("");
   }
 
-  function forgotPassword(e) {
-    e.preventDefault();
-    console.log(forgotpsswd);
-    setForgotpsswd("");
-  }
   return (
     <div className="main">
       <div className="layer">
         <div className={`container ${!signup ? "" : "sign-up-mode"}`}>
-          {/* <div className={`layer ${!signup ? "" : "sign-up-mode"}`>hh</div> */}
-          {/* <div className={`layer ${!signup ? "" : "sign-up-mode"}`}> */}
           <div className="signin-signup">
             <form onSubmit={signinfunc} className="sign-in-form">
               <h2 className="title">Login</h2>
@@ -54,6 +59,7 @@ function Login() {
                 <input
                   type="text"
                   name="fname"
+                  autoComplete="off"
                   placeholder="username"
                   value={loginusername}
                   onChange={(e) => setLoginusername(e.target.value)}
@@ -66,6 +72,7 @@ function Login() {
                 <input
                   type="password"
                   name="fpassword"
+                  autoComplete="off"
                   placeholder="password"
                   value={loginpsswd}
                   onChange={(e) => setLoginpsswd(e.target.value)}
@@ -76,27 +83,8 @@ function Login() {
               <button type="submit" value="Login">
                 Login
               </button>
+              {error}
             </form>
-
-            {/* <form className="forgotpassword" onSubmit={forgotPassword}>
-          <h2 className="title">Forgot password?</h2>
-          <div className="forgotPassword">
-            <div className="input-field">
-              <i className="fa-solid fa-user" />
-              <input
-                type="text"
-                placeholder="username"
-                value={forgotpsswd}
-                onChange={(e) => setForgotpsswd(e.target.value)}
-                required
-              />
-              <div className="formerror" />
-            </div>
-            <button type="submit" value="submit" id="btn2">
-              Submit
-            </button>
-          </div>
-        </form> */}
 
             <form className="sign-up-form" onSubmit={signupfunc}>
               <h2 className="title">Sign up</h2>
@@ -174,14 +162,8 @@ function Login() {
                   Sign Up
                 </button>
               </div>
-              {/* <img
-              src="/Images/undraw_online_learning_re_qw08.svg"
-              alt=""
-              className="image"
-            /> */}
             </div>
           </div>
-          lll
         </div>
       </div>
     </div>
