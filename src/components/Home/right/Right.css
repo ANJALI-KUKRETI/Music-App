@@ -1,0 +1,106 @@
+.right{
+    color: white;
+    padding: 20px 0px 0px 30px;
+    width: 78%;
+    /* background-color: azure; */
+
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 35px;
+}
+
+.discover{
+font-size: 17px;
+}
+
+.right-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 25px;
+    /* justify-content: space-between; */
+}
+
+.fav{
+    color: red;
+    /* font-size: 20px; */
+}
+
+.album{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+ .title{
+    color:gray;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px 0px 20px 0px;
+}
+
+.sub .singer{
+    color:gray;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 2px 0px;
+}
+
+.recently{
+    display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+}
+.sub{
+    margin-right: 30px;
+    font-size: 17px;
+}
+
+/* ----------------- */
+.mini{
+    width: 60px;
+    border-radius: 10px;
+}
+
+.song-list{
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    /* align-items: flex-end;/ */
+}
+
+.individual-song{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+margin: 10px 0px;
+
+}
+
+.info .singer{
+    color:gray;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 2px 0px;
+}
+
+/* .info{
+    margin-right: 30px;
+} */
+
+.fav_btn{
+  font-size:30px ;
+}

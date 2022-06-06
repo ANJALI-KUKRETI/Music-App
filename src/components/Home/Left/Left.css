@@ -1,28 +1,57 @@
-.menu{
-    padding: 20px 30px;
+.left{
+    padding: 20px 0px 0px 30px;
+    background-color: rgba(0,0,0,0.5);
+    padding-right: 10px;
+    width:240px;
+}
+
+.left .name{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.left span{
+    font-size: 30px;
 }
 .menu .title{
     color:gray;
     font-size: 14px;
     font-weight: 600;
+    margin: 20px 0px 10px 0px;
 }
 
 .sub-menu{
     color:gray;
     font-size: 17px;
-    font-weight: 500;
-    padding: 10px 0px;
+    font-weight: 300;
+    padding: 9px 0px;
 }
 
 .add_play{
     width: 200px;
-    height: 35px;
+    height: 40px;
     border: 1px solid gray;
     border-radius: 50px;
     margin: 15px 0px;
     text-align: left;
-    padding: 7px 0px 0px 15px;
+    padding: 8px 0px 0px 15px;
     color: white;
     font-size: 15px;
+    position: relative;
 }
 
+.menu button{
+    position: absolute;
+    top:-25.7%;
+    right: 1%;
+    height: 90%;
+    width: 50px;
+    background-image: none;
+    background-color: rgb(245, 234, 234,0.3);
+    color:rgb(116, 204, 29);
+    font-size: 27px;
+    font-weight: 300;
+    box-shadow: 0px 1px 6px rgb(170, 240, 170);
+    
+}

@@ -3,6 +3,7 @@ import "./Left.css";
 function Left() {
   return (
       <div className="left">
+        <div className="name">Tu<span>♫</span>eBag</div>
     <div className="menu">
       <div className="title">MENU</div>
       <div className="sub-menu">
@@ -17,7 +18,7 @@ function Left() {
     </div>
 
     <div className="menu">
-      <div className="title">PLAYIST</div>
+      <div className="title">PLAYLIST</div>
       <div className="sub-menu">
       <i class="fa-solid fa-forward"></i> Discover
       </div>
@@ -31,6 +32,9 @@ function Left() {
       <button>+</button>
       </div>
     </div>
+
+  
+
     </div>
   );
 }
