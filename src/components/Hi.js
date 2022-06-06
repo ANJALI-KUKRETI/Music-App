@@ -5,7 +5,7 @@ function Hi() {
   const [signup, setSignup] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [psswd, setpsswd] = useState("");
+  const [psswd, setPsswd] = useState("");
   const [loginusername, setLoginusername] = useState("");
   const [loginpsswd, setLoginpsswd] = useState("");
   const [forgotpsswd, setForgotpsswd] = useState("");
@@ -22,22 +22,29 @@ function Hi() {
     console.log(username);
     console.log(email);
     console.log(psswd);
+    setEmail('');
+    setUsername('');
+    setPsswd('')
   }
 
   function signinfunc(e) {
     e.preventDefault();
     console.log(loginusername);
     console.log(loginpsswd);
+    setLoginusername('');
+    setLoginpsswd('')
   }
 
   function forgotPassword(e) {
     e.preventDefault();
     console.log(forgotpsswd);
+    setForgotpsswd('')
   }
   return (
+    <div className="layer">
     <div className={`container ${!signup ? "" : "sign-up-mode"}`}>
      {/* <div className={`layer ${!signup ? "" : "sign-up-mode"}`>hh</div> */}
-    <div className={`layer ${!signup ? "" : "sign-up-mode"}`}>
+    {/* <div className={`layer ${!signup ? "" : "sign-up-mode"}`}> */}
      
       <div className="signin-signup">
         <form onSubmit={signinfunc} className="sign-in-form">
@@ -128,7 +135,7 @@ function Hi() {
               placeholder="password"
               id="userpassword"
               value={psswd}
-              onChange={(e) => setpsswd(e.target.value)}
+              onChange={(e) => setPsswd(e.target.value)}
               required
             />
             <br />
@@ -144,8 +151,8 @@ function Hi() {
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>Student Of Lara Technology</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.!</p>
+            <h1>TuneBag</h1>
+            <p>Get a personalised experience, and access all your music</p>
             <button className="btn" id="sign-in-btn" onClick={displayLogin}>
               Sign In
             </button>
@@ -158,8 +165,8 @@ function Hi() {
         </div>
         <div className="panel right-panel">
           <div className="content">
-            <h3>New Student Of Lara Technology</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.!</p>
+            <h1>TuneBag</h1>
+            <p>Get a personalised experience, and access all your music</p>
             <button className="btn" id="sign-up-btn" onClick={displaySignUp}>
               Sign Up
             </button>
@@ -174,6 +181,7 @@ function Hi() {
       lll
     </div>
   </div>
+  // </div>
   );
 }
 
