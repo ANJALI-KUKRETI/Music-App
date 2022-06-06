@@ -41,6 +41,7 @@ function Login() {
     setForgotpsswd('')
   }
   return (
+    <div className="main">
     <div className="layer">
     <div className={`container ${!signup ? "" : "sign-up-mode"}`}>
      {/* <div className={`layer ${!signup ? "" : "sign-up-mode"}`>hh</div> */}
@@ -181,7 +182,8 @@ function Login() {
       lll
     </div>
   </div>
-  // </div>
+   </div>
+  
   );
 }
 

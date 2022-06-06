@@ -14,7 +14,7 @@
     /* border-image: url(/Images/download.jpeg);
     border-image-repeat: round ; */
 }
-body{
+.main{
 
     min-height: 100vh;
     background:rgb(191, 200, 227);
