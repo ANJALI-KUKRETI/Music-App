@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+
+.mainPage{  
+  font-family: 'Lato', sans-serif;
+    background-image: url(/public/images/bg6.jpg);
+    background-color: #cccccc; 
+    height: 100vh; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer2{
+ display:flex;
+    width: 90vw;
+    height: 90vh;
+    background-color: rgba(0,0,0,0.7); 
+}

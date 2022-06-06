@@ -1,0 +1,28 @@
+.menu{
+    padding: 20px 30px;
+}
+.menu .title{
+    color:gray;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sub-menu{
+    color:gray;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+
+.add_play{
+    width: 200px;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 50px;
+    margin: 15px 0px;
+    text-align: left;
+    padding: 7px 0px 0px 15px;
+    color: white;
+    font-size: 15px;
+}
+
