@@ -1,13 +1,33 @@
 import "./Right.css";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebase";
+import { useState } from "react";
 
+// import { ModalHover  from 'react-modal-hover'
 function Right() {
+const [displayinfo,setDisplayinfo]=useState(false)
+  function clickUser(){
+setDisplayinfo(!displayinfo);
+  }
+
+// console.log(displayinfo);
+ 
+    const logoutHandler = () => {
+      signOut(auth);
+    };
   return (
     <div className="right">
       <div className="nav">
         <div className="discover">DISCOVER</div>
         <div className="right-side">
           <i className="fa-solid fa-heart fav"></i>
-          <img src="images/user2.png" alt="unavailable" className="user" />
+          <img src="images/user2.png" alt="unavailable" className="user" onClick={clickUser}/>
+        
+        <div className={displayinfo ?"user_info":"user_info display"}>
+          <div className="user_name">sonakshi00</div>
+       <div onClick={logoutHandler} className="logout"><i className="fa-solid fa-arrow-right-from-bracket"></i> Logout</div>
+
+        </div>
         </div>
       </div>
 
@@ -49,6 +69,7 @@ function Right() {
 
           <div className="individual-song">
             <img src="images/album.jpg" alt="unavailable" className="mini" />
+     
             <div className="info">
               <div className="song">Cold Heart</div>
               <div className="singer">Elon John</div>

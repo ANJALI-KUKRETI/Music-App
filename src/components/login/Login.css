@@ -116,7 +116,7 @@ form.sign-up-form {
   position: absolute;
   right: 0;
 }
-button {
+.main button {
   width: 120px;
   height: 45px;
   border: none;

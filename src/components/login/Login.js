@@ -32,7 +32,7 @@ function Login() {
     setEmail("");
     setUsername("");
     setPsswd("");
-    displayLogin();
+    // displayLogin();
   }
 
   function signinfunc(e) {

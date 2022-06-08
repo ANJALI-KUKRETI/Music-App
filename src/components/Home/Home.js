@@ -1,31 +1,20 @@
-<<<<<<< HEAD
-import './Home.css'
-import Left from './left/Left'
-import Right from './right/Right'
-function Home(){
-return(
-    <div className='mainPage'>
-        <div className='layer2'>
-            <Left/>
-            <Right/>
-        </div>
-=======
 import { signOut } from "firebase/auth";
 import "./Home.css";
-import Left from "./Left/Left";
+import Left from "./left/Left";
 import { auth } from "../../firebase";
+import Right from "./right/Right";
 
 function Home() {
-  const logoutHandler = () => {
-    signOut(auth);
-  };
+  // const logoutHandler = () => {
+  //   signOut(auth);
+  // };
   return (
     <div className="mainPage">
       <div className="layer2">
         <Left />
+        <Right/>
       </div>
-      <button onClick={logoutHandler}>Logout</button>
->>>>>>> 582e566ca2efce7ab07e1fa00d42aaf9a8972dd3
+      {/* <button onClick={logoutHandler}>Logout</button> */}
     </div>
   );
 }
